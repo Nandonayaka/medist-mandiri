@@ -4,13 +4,13 @@ import { Phone, MapPin, Clock, MessageCircle, X, User, ChevronRight, ShieldCheck
 const CONTACT_NUMBERS = [
     {
         label: "Customer Service 1",
-        name: "Ahmad",
-        number: "6282143506574"
+        name: "Nandun",
+        number: "6285142514522"
     },
     {
         label: "Customer Service 2",
-        name: "Fatimah",
-        number: "6285940446222"
+        name: "Hilmun",
+        number: "6282143506574"
     }
 ];
 
@@ -56,7 +56,8 @@ const Contact = () => {
             const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
             window.open(url, "_blank");
         } else {
-            const url = `https://wa.me/${number}`;
+            const message = "Halo Medist Mandiri, Saya ingin bertanya";
+            const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
             window.open(url, "_blank");
         }
         closeModal();
