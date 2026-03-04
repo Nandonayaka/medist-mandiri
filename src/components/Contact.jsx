@@ -25,6 +25,8 @@ const Contact = () => {
         note: ""
     });
 
+    const [error, setError] = useState("");
+
     const openModal = (type) => {
         setModalType(type);
         setModalOpen(true);
@@ -33,12 +35,13 @@ const Contact = () => {
     const closeModal = () => {
         setModalOpen(false);
         setModalType(null);
+        setError("");
     };
 
     const handleSend = (number) => {
         if (modalType === "form") {
             if (!formData.name || !formData.phone) {
-                alert("Mohon isi Nama dan Nomor WhatsApp Anda");
+                setError("Mohon isi Nama dan Nomor WhatsApp Anda");
                 return;
             }
 
@@ -61,8 +64,9 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError("");
         if (!formData.name || !formData.phone) {
-            alert("Mohon isi Nama dan Nomor WhatsApp Anda");
+            setError("Mohon lengkapi Nama dan Nomor WhatsApp Anda");
             return;
         }
         openModal("form");
@@ -149,7 +153,7 @@ const Contact = () => {
                     {/* RIGHT CARD */}
                     <div className="bg-white rounded-[20px] p-10 shadow-[0_15px_60px_rgba(0,0,0,0.06)] border border-gray-100" data-aos="fade-left">
                         <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
+                            <div className="space-y-2">
                                 <label className="text-[14px] font-medium text-gray-700 block mb-2">
                                     Nama Lengkap
                                 </label>
@@ -157,18 +161,21 @@ const Contact = () => {
                                     type="text"
                                     placeholder="Masukkan nama.."
                                     value={formData.name}
-                                    onChange={(e) =>
-                                        setFormData({ ...formData, name: e.target.value })
-                                    }
-                                    className="w-full p-4 rounded-[10px] bg-[#fdfdfd] border border-gray-200 focus:outline-none focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E]/20 transition-all text-[15px]"
+                                    onChange={(e) => {
+                                        setFormData({ ...formData, name: e.target.value });
+                                        if (error) setError("");
+                                    }}
+                                    className={`w-full p-4 rounded-[10px] bg-[#fdfdfd] border ${error && !formData.name ? "border-red-400 ring-4 ring-red-50" : "border-gray-200"
+                                        } focus:outline-none focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E]/20 transition-all text-[15px]`}
                                 />
                             </div>
 
-                            <div>
+                            <div className="space-y-2">
                                 <label className="text-[14px] font-medium text-gray-700 block mb-2">
                                     Nomor WhatsApp
                                 </label>
-                                <div className="flex gap-0 border border-gray-200 rounded-[10px] overflow-hidden focus-within:border-[#0F766E] focus-within:ring-1 focus-within:ring-[#0F766E]/20 transition-all">
+                                <div className={`flex gap-0 border rounded-[10px] overflow-hidden transition-all ${error && !formData.phone ? "border-red-400 ring-4 ring-red-50" : "border-gray-200"
+                                    } focus-within:border-[#0F766E] focus-within:ring-1 focus-within:ring-[#0F766E]/20`}>
                                     <div className="bg-gray-50 px-4 flex items-center gap-2 border-r border-gray-100 text-gray-500 font-medium text-[15px]">
                                         +62 <ChevronRight size={14} />
                                     </div>
@@ -176,14 +183,16 @@ const Contact = () => {
                                         type="tel"
                                         placeholder="8xxxxxxxxxx"
                                         value={formData.phone}
-                                        onChange={(e) =>
-                                            setFormData({ ...formData, phone: e.target.value })
-                                        }
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, phone: e.target.value });
+                                            if (error) setError("");
+                                        }}
                                         className="w-full p-4 rounded-r-[10px] bg-[#fdfdfd] border-none focus:outline-none focus:ring-0 text-[15px]"
                                     />
                                 </div>
                             </div>
 
+                            {/* Selection field and Others remain unchanged but let's re-verify context */}
                             <div>
                                 <label className="text-[14px] font-medium text-gray-700 block mb-2">
                                     Pilih paket umroh
@@ -221,9 +230,18 @@ const Contact = () => {
                                 />
                             </div>
 
+                            {error && (
+                                <div className="flex items-center gap-3 bg-red-50 border border-red-100 p-4 rounded-xl text-red-600 animate-in fade-in slide-in-from-top-2">
+                                    <div className="bg-red-500 text-white rounded-full p-1 shrink-0">
+                                        <X size={12} strokeWidth={3} />
+                                    </div>
+                                    <p className="text-[13px] font-bold">{error}</p>
+                                </div>
+                            )}
+
                             <button
                                 type="submit"
-                                className="w-full bg-[#0F766E] hover:bg-[#0d6b63] transition-all text-white py-3.5 rounded-[10px] font-semibold text-[16px] shadow-lg shadow-[#0F766E]/10"
+                                className="w-full bg-[#0F766E] hover:bg-[#0d6b63] transition-all text-white py-3.5 rounded-[10px] font-semibold text-[16px] shadow-lg shadow-[#0F766E]/10 active:scale-[0.98]"
                             >
                                 Dapatkan Informasi Lengkap
                             </button>
