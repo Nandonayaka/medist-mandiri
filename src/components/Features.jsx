@@ -5,6 +5,7 @@ const Features = () => {
         { name: "Berizin", icon: <ShieldCheck className="w-[26px] h-[26px] text-[#007E80]" /> },
         { name: "Harga Transparan", icon: <Tag className="w-[26px] h-[26px] text-[#007E80]" /> },
         { name: "Pendamping Berpengalaman", icon: <UserCheck className="w-[26px] h-[26px] text-[#007E80]" /> },
+        { name: "Fasilitas Hotel Nyata", icon: <Building2 className="w-[26px] h-[26px] text-[#007E80]" /> },
     ];
 
     const whyChooseUs = [
@@ -36,23 +37,23 @@ const Features = () => {
             {/* Teal Highlights Bar */}
             <div className="bg-[#007E80] py-6 md:py-8">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 md:gap-12 items-center justify-items-center">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-12 items-center justify-items-center">
                         {highlights.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-white text-center sm:text-left group"
+                                className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-white text-center sm:text-left group w-full justify-center sm:justify-start"
                                 data-aos="fade-up"
                                 data-aos-delay={idx * 100}
                             >
-                                <div className="bg-white/10 sm:bg-white p-3 sm:p-3.5 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
+                                <div className="bg-white/10 sm:bg-white p-3 sm:p-3.5 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-white flex-shrink-0">
                                     <div className="sm:text-inherit text-white sm:block hidden">
                                         {item.icon}
                                     </div>
-                                    <div className="sm:hidden block invert brightness-0">
+                                    <div className="sm:hidden block invert brightness-0 scale-90">
                                         {item.icon}
                                     </div>
                                 </div>
-                                <span className="text-[16px] sm:text-[18px] md:text-xl font-bold tracking-tight leading-tight">
+                                <span className="text-[14px] sm:text-[18px] md:text-xl font-bold tracking-tight leading-tight max-w-[120px] sm:max-w-none">
                                     {item.name}
                                 </span>
                             </div>
