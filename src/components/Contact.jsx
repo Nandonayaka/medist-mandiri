@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, MapPin, Clock, MessageCircle, X, User, ChevronRight } from "lucide-react";
+import { Phone, MapPin, Clock, MessageCircle, X, User, ChevronRight, ShieldCheck } from "lucide-react";
 
 const CONTACT_NUMBERS = [
     {
@@ -69,22 +69,22 @@ const Contact = () => {
     };
 
     return (
-        <section id="kontak" className="py-28 font-['Poppins'] bg-white">
+        <section id="kontak" className="py-16 md:py-28 font-['Poppins'] bg-white overflow-hidden">
             <div className="max-w-6xl mx-auto px-6">
-                <div className="text-center mb-16" data-aos="fade-up">
-                    <h2 className="text-[32px] font-bold text-[#0F766E] mb-4">
+                <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
+                    <h2 className="text-[28px] md:text-[32px] font-bold text-[#0F766E] mb-4">
                         Hubungi Medist Mandiri
                     </h2>
-                    <p className="text-gray-600 text-[16px]">
+                    <p className="text-gray-600 text-[15px] md:text-[16px]">
                         Tim kami siap membantu kebutuhan <span className="font-semibold text-black">perjalanan umroh</span> Anda.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                     {/* LEFT CARD */}
-                    <div className="bg-white rounded-[20px] p-10 shadow-[0_15px_60px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col justify-between" data-aos="fade-right">
+                    <div className="bg-white rounded-[20px] p-6 sm:p-10 shadow-[0_15px_60px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col justify-between" data-aos="fade-right">
                         <div>
-                            <h3 className="text-[28px] font-bold text-[#333] mb-12">
+                            <h3 className="text-[24px] md:text-[28px] font-bold text-[#333] mb-8 md:mb-12">
                                 PT. Medist Mandiri
                             </h3>
 

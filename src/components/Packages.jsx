@@ -72,18 +72,18 @@ const Packages = () => {
     };
 
     return (
-        <section id="paket" className="my-24 py-4 bg-[#9DECF0]/14">
-            <div className="max-w-6xl mx-auto px-6 text-center mb-14" data-aos="fade-up">
-                <h2 className="text-[36px] font-semibold text-[#0F766E] mb-3">
+        <section id="paket" className="py-16 md:py-24 bg-[#9DECF0]/14">
+            <div className="max-w-6xl mx-auto px-6 text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h2 className="text-[28px] md:text-[36px] font-semibold text-[#0F766E] mb-3">
                     Paket Umroh Medist Mandiri
                 </h2>
-                <p className="text-[16px] text-black/80">
+                <p className="text-[15px] md:text-[16px] text-black/80">
                     Pilih paket <span className="font-semibold">keberangkatan</span> sesuai kebutuhan Anda.
                 </p>
             </div>
 
             <div className="max-w-7xl mx-auto px-6">
-                <div className="grid md:grid-cols-3 gap-8 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
                     {packages.map((pkg, index) => (
                         <div
                             key={index}
@@ -176,10 +176,10 @@ const Packages = () => {
 
             {/* CTA Bottom */}
             <div
-                className="max-w-4xl mx-auto mt-20 
+                className="max-w-4xl mx-auto mt-12 md:mt-20 
                 bg-[#FFFFFF] 
                 rounded-[12px] 
-                px-10 py-6 mb-6
+                px-6 md:px-10 py-6 md:py-8 mb-6 mx-6 md:mx-auto
                 shadow-[0_10px_30px_rgba(0,0,0,0.04)]
                 flex flex-col md:flex-row 
                 items-center justify-between 
@@ -201,7 +201,7 @@ const Packages = () => {
                     hover:bg-[#0d6b63]
                     transition-all duration-200
                     text-white 
-                    px-8 py-4 
+                    px-8 py-3.5 
                     rounded-[12px] 
                     text-[16px] font-semibold hover:scale-[1.05] active:scale-[0.95] outline-none"
                 >

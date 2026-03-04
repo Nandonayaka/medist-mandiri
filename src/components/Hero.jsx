@@ -28,28 +28,29 @@ const Hero = () => {
             </div>
 
             <div className="container mx-auto px-4 md:px-8 relative z-20">
-                <div className="max-w-xl py-20 px-4 md:px-0" data-aos="fade-right">
-                    <h1 className="text-[48px] md:text-[48px] font-bold text-[#007E80] leading-[1.1] mb-5">
+                <div className="max-w-xl py-12 md:py-20 px-4 md:px-0 text-center md:text-left mx-auto md:mx-0" data-aos="fade-right">
+                    <h1 className="text-[32px] sm:text-[40px] md:text-[48px] font-bold text-[#007E80] leading-[1.2] md:leading-[1.1] mb-5">
                         Umroh Nyaman <br />
                         & Terpercaya <br />
                         Bersama <br />
                         Medist Mandiri
                     </h1>
-                    <p className="text-[18px] md:text-[18px] text-gray-800 font-semibold leading-relaxed mb-5 max-w-lg">
+                    <p className="text-[16px] md:text-[18px] text-gray-800 font-semibold leading-relaxed mb-8 max-w-lg mx-auto md:mx-0">
                         Perjalanan ibadah yang aman, terarah, dan sesuai tuntunan. Tanpa biaya tersembunyi.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 mb-[3%]">
+                    <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mb-4">
                         <button
                             onClick={scrollToContact}
-                            className="bg-[#007E80] hover:bg-[#006666] text-white px-5 py-3 rounded-[9px] font-bold text-[16px] transition-all shadow-lg active:scale-95 outline-none"
+                            className="w-full sm:w-auto bg-[#007E80] hover:bg-[#006666] text-white px-8 py-3.5 rounded-[9px] font-bold text-[16px] transition-all shadow-lg active:scale-95 outline-none"
                         >
                             Pesan Sekarang
                         </button>
+                        
                     </div>
                     <div className="">
                         <button
                             onClick={scrollToContact}
-                            className="bg-white/80 backdrop-blur-sm border-2 border-[#007E80] text-[#007E80] px-8 py-3 rounded-[9px] font-bold text-[16px] transition-all hover:bg-white active:scale-95 outline-none"
+                            className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-[#007E80] text-[#007E80] px-8 py-3 rounded-[9px] font-bold text-[16px] transition-all hover:bg-white active:scale-95 outline-none"
                         >
                             Konsultasi via WhatsApp
                         </button>

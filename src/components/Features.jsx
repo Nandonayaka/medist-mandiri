@@ -34,27 +34,41 @@ const Features = () => {
     return (
         <div className="w-full">
             {/* Teal Highlights Bar */}
-            <div className="bg-[#007E80] py-4">
-                <div className="container mx-auto px-4 flex flex-wrap justify-center gap-12 md:gap-24">
-                    {highlights.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-5 text-white">
-                            <div className="bg-white p-3 rounded-2xl flex items-center justify-center shadow-lg">
-                                {item.icon}
+            <div className="bg-[#007E80] py-6 md:py-8">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 md:gap-12 items-center justify-items-center">
+                        {highlights.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-white text-center sm:text-left group"
+                                data-aos="fade-up"
+                                data-aos-delay={idx * 100}
+                            >
+                                <div className="bg-white/10 sm:bg-white p-3 sm:p-3.5 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
+                                    <div className="sm:text-inherit text-white sm:block hidden">
+                                        {item.icon}
+                                    </div>
+                                    <div className="sm:hidden block invert brightness-0">
+                                        {item.icon}
+                                    </div>
+                                </div>
+                                <span className="text-[16px] sm:text-[18px] md:text-xl font-bold tracking-tight leading-tight">
+                                    {item.name}
+                                </span>
                             </div>
-                            <span className="text-xl font-bold tracking-tight">{item.name}</span>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
 
             {/* Why Choose Us Section */}
-            <section id="tentang" className="py-[40px] bg-[#fffffff]">
-                <div className="max-w-6xl mx-auto px-6 text-center mb-[30px]" data-aos="fade-up">
-                    <h2 className="text-[32px] font-semibold text-[#0f7c7c] mb-[14px]">
+            <section id="tentang" className="py-16 md:py-24 bg-[#fffffff]">
+                <div className="max-w-6xl mx-auto px-6 text-center mb-12 md:mb-16" data-aos="fade-up">
+                    <h2 className="text-[28px] md:text-[32px] font-semibold text-[#0f7c7c] mb-4">
                         Kenapa Memilih Medist Mandiri?
                     </h2>
 
-                    <p className="text-[18px] max-w-3xl mx-auto leading-relaxed px-[100px]">
+                    <p className="text-[16px] md:text-[18px] max-w-3xl mx-auto leading-relaxed px-4 md:px-24">
                         Layanan yang <span className="font-medium text-black">dirancang</span> untuk memastikan perjalanan ibadah lebih tenang, jelas, dan aman.
                     </p>
                 </div>
@@ -70,32 +84,32 @@ const Features = () => {
                                 group
                                 bg-white
                                 rounded-[25px]
-                                border border-gray-300
+                                border border-gray-200
                                 flex flex-col items-center justify-center
                                 text-center
-                                transition-all duration-500 ease-out
-                                shadow-[0_10px_30px_rgba(0,0,0,0.04)]
-                                hover:shadow-[0_25px_60px_rgba(15,124,124,0.15)]
-                                hover:-translate-y-2
-                                hover:border-[#0f7c7c]/20
+                                transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1)
+                                shadow-[0_8px_30px_rgba(0,0,0,0.02)]
+                                hover:shadow-[0_30px_70px_rgba(15,124,124,0.12)]
+                                hover:-translate-y-3
+                                hover:border-[#0f7c7c]/15
                                 w-full
                                 h-full
                                 min-h-[300px]
                                 p-10
                             "
                             >
-                                <div className="mb-6 flex-shrink-0">
-                                    <div className="text-[#0f7c7c]/80 group-hover:text-[#0f7c7c] transition-colors duration-300 transform group-hover:scale-110">
+                                <div className="mb-6 flex-shrink-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                                    <div className="text-[#0f7c7c]/70 group-hover:text-[#0f7c7c] transition-colors duration-500">
                                         {card.icon}
                                     </div>
                                 </div>
 
-                                <div className="flex-grow flex flex-col justify-center">
-                                    <h3 className="text-[18px] font-semibold text-[#007E80]/90 group-hover:text-[#0f7c7c] transition-colors duration-300 mb-3 tracking-tight">
+                                <div className="flex-grow flex flex-col justify-center transition-all duration-500">
+                                    <h3 className="text-[18px] font-semibold text-[#007E80]/80 group-hover:text-[#0c7a7a] transition-colors duration-500 mb-3 tracking-tight">
                                         {card.title}
                                     </h3>
 
-                                    <p className="text-gray-500 text-[16px] leading-relaxed font-reguler">
+                                    <p className="text-gray-400 group-hover:text-gray-500 text-[15px] leading-relaxed transition-colors duration-500">
                                         {card.desc}
                                     </p>
                                 </div>
