@@ -12,7 +12,7 @@ const Features = () => {
         {
             title: "Fasilitas Hotel Nyata",
             desc: "Hotel dekat Masjidil Haram dan Masjid Nabawi, sesuai yang dijanjikan saat pendaftaran.",
-            icon: <Building2 className="w-[76px] h-[76px] text-[#007E80]" strokeWidth={1} />
+            icon: <Building2 className="w-19 h-19 text-[#007E80]" strokeWidth={1} />
         },
         {
             title: "Pendamping Berpengalaman",

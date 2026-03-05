@@ -16,7 +16,7 @@ const CONTACT_NUMBERS = [
 
 const Contact = () => {
     const [modalOpen, setModalOpen] = useState(false);
-    const [modalType, setModalType] = useState(null); // "form" | "direct"
+    const [modalType, setModalType] = useState(null); 
 
     const [formData, setFormData] = useState({
         name: "",
